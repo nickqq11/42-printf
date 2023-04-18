@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/12 15:36:21 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/18 17:26:54 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,7 @@ int	ft_printf(const char *format, ...)
 	if (!tab)
 		return (-1);
 	ft_initiate_tab(tab);
+	va_start(tab->args, format);
+	i = -1;
+	ret =0;
 }
