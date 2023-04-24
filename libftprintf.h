@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:09 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/12 15:22:44 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/24 18:33:42 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdarg.h> 
 
 typedef struct s_print
 {

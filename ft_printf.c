@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/18 17:26:54 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/04/24 15:51:22 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,29 @@ t_print	*ft_initiate_tab(t_print *tab)
 	return (tab);
 }
 
+int	ft_eval_format(t_print *tab, const char *format, int i)
+{
+	while (format[i] != 'u' && format[i] != 'd' && format[i] != 'c' && format[i] != 's' && format[i] != 'u' && format[i] != 'p' && format[i] != 'x' && format[i] != 'X' && format[i] != '%')
+	{
+		if (format[i] == '.')
+			tab->pnt = 1;
+		if (format[i] == '-')
+			tab->dash = 1;
+		if (format[i] == '0')
+			tab->is_zero = 1;
+		if (format[i] == '%')
+			write(1, "%", 1);
+		if (format[i] == ' ')
+			tab->sp = 1;
+		if (format[i] == '+')
+			tab->sign = 1;
+	}
+}
+
 int	ft_printf(const char *format, ...)
 {
+	int		i;
+	int		ret;
 	t_print	*tab;
 
 	tab = malloc(sizeof(t_print));
@@ -37,5 +58,16 @@ int	ft_printf(const char *format, ...)
 	ft_initiate_tab(tab);
 	va_start(tab->args, format);
 	i = -1;
-	ret =0;
+	ret = 0;
+	while (format[++i])
+	{
+		if (format[i] == '%')
+			i = ft_eval_format(tab, format, i + 1);
+		else
+			ret += write(1, &format[i], 1);
+	}
+	va_end(tab->args);
+	ret += tab->tl;
+	free(tab);
+	return (ret);
 }
