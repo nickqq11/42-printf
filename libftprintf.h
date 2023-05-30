@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:09 by nhuang            #+#    #+#             */
-/*   Updated: 2023/04/24 18:33:42 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/05/30 18:58:43 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,11 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdarg.h> 
+# include <libft.h>
 
-typedef struct s_print
-{
-	va_list	args;
-	int		wdt;
-	int		prc;
-	int		zero;
-	int		pnt;
-	int		dash;
-	int		tl;
-	int		sign;
-	int		is_zero;
-	int		perc;
-	int		sp;
-}	t_print;
+/* printf functions */
+int	ft_printf(const char *s, ...)
+
+/* libft functions */
 
 #endif

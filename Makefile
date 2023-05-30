@@ -6,7 +6,7 @@
 #    By: nhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 13:32:19 by nhuang            #+#    #+#              #
-#    Updated: 2023/04/07 14:31:58 by nhuang           ###   ########.fr        #
+#    Updated: 2023/05/29 16:53:14 by nhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME) : $(OBJECTS)
 	@echo "compiling $@ from $^"
 	@ar src $(NAME) $(OBJECTS)
 
-%.0 : %.c
+%.o : %.c
 	@$(CC) -c $< -o $@
 
 clean :
