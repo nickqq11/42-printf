@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:53:09 by nhuang            #+#    #+#             */
-/*   Updated: 2023/06/26 17:48:45 by nhuang           ###   ########.fr       */
+/*   Created: 2023/06/24 15:29:15 by nhuang            #+#    #+#             */
+/*   Updated: 2023/06/26 12:33:16 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#include"libftprintf.h"
 
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <stdarg.h> 
+int	ft_putnbr(long long int n)
+{
+	int		count;
+	char	*base;
 
-/* printf functions */
-int	ft_printf(const char *s, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *str);
-int	ft_putnbr(long long int n);
-int	ft_putnbr_un(unsigned int n);
-
-/* libft functions */
-
-#endif
+	count = 0;
+	base = "0123456789";
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		count += 1;
+		n = n * -1;
+	}
+	else if (n >= 10)
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	else
+	{
+		write(1, &base[n], 1);
+		count++;
+	}
+	return (count);
+}

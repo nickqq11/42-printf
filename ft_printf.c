@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/05/30 19:24:52 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/06/26 17:48:45 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ int	ft_portal(va_list args, char cha)
 		return (ft_putchar(va_arg(args, int)));
 	if (cha == 's')
 		return (ft_putstr(va_arg(args, char *)));
+	if (cha == 'd' || cha == 'i')
+		return (ft_putnbr(va_arg(args, int)));
+	if (cha == 'u')
+		return(ft_putnbr_un(va_arg(args, unsigned int)));
+	if (cha == 'x' || cha == 'X')
+		return(ft_puthex(va_arg(args, int), cha));
+	
 	return (0);
 }
 
