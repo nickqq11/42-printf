@@ -6,7 +6,7 @@
 #    By: nhuang <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 13:32:19 by nhuang            #+#    #+#              #
-#    Updated: 2023/05/29 16:53:14 by nhuang           ###   ########.fr        #
+#    Updated: 2023/06/27 18:19:59 by nhuang           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,13 @@ NAME = libftprintf.a
 
 CC = gcc -Wall -Wextra -werror
 
-SOURCE = 
+SOURCE = ft_printf.c \
+	ft_pointer.c \
+	ft_putchar.c \
+	ft_puthex.c \
+	ft_putnbr_un.c \
+	ft_putnbr.c \
+	ft_putstr.c 
 
 OBJECTS = $(SOURCE:%.c=%.o)
 
