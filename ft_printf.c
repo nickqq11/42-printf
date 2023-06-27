@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/06/26 17:48:45 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/06/27 18:09:31 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 int	ft_portal(va_list args, char cha)
 {
+	unsigned long	ptr;
+
 	if (cha == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	if (cha == 's')
@@ -24,10 +26,16 @@ int	ft_portal(va_list args, char cha)
 	if (cha == 'd' || cha == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	if (cha == 'u')
-		return(ft_putnbr_un(va_arg(args, unsigned int)));
+		return (ft_putnbr_un(va_arg(args, unsigned int)));
 	if (cha == 'x' || cha == 'X')
-		return(ft_puthex(va_arg(args, int), cha));
-	
+		return (ft_puthex(va_arg(args, int), cha));
+	if (cha == 'p')
+	{
+		ptr = va_arg(args, unsigned long);
+		if (ptr)
+			return (ft_pointer(ptr, cha));
+		return (ft_putstr("(NILL)"));
+	}		
 	return (0);
 }
 

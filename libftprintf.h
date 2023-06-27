@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:09 by nhuang            #+#    #+#             */
-/*   Updated: 2023/06/26 17:48:45 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/06/27 17:46:52 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putchar(char c);
 int	ft_putstr(char *str);
 int	ft_putnbr(long long int n);
 int	ft_putnbr_un(unsigned int n);
-
-/* libft functions */
+int	ft_puthex(int n, char check);
+int	ft_pointer(unsigned long long int n, char cha);
 
 #endif
