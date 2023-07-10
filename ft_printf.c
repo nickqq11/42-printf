@@ -6,11 +6,11 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/06/27 18:09:31 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/10 16:22:04 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libftprintf.h"
+#include "ft_printf.h"
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
@@ -34,8 +34,10 @@ int	ft_portal(va_list args, char cha)
 		ptr = va_arg(args, unsigned long);
 		if (ptr)
 			return (ft_pointer(ptr, cha));
-		return (ft_putstr("(NILL)"));
-	}		
+		return (ft_putstr("(nil)"));
+	}
+	if (cha == '%')
+		return (ft_putchar('%'));
 	return (0);
 }
 
@@ -72,16 +74,4 @@ int	ft_printf(const char *s, ...)
 		i++;
 	}
 	return (length);
-}
-
-int	main ()
-{
-	char	*i;
-	int		a;
-
-	i = "ABCD";
-	write(1, "1\n", 2);
-	a = ft_printf("abcd%s", i);
-	printf("\n1- %d ", a);
-	return (0);
 }

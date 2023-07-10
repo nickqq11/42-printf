@@ -6,17 +6,19 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:16:08 by nhuang            #+#    #+#             */
-/*   Updated: 2023/05/30 19:19:30 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/10 16:20:04 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (write(1, "(null)", 6));
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);

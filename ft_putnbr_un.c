@@ -6,20 +6,21 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 14:53:14 by nhuang            #+#    #+#             */
-/*   Updated: 2023/06/26 15:05:45 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/10 19:20:05 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libftprintf.h"
+#include"ft_printf.h"
 
 int	ft_putnbr_un(unsigned int n)
 {
 	int	count;
 
+	count = 0;
 	if (n >= 10)
 	{
-		ft_putnbr_un(n / 10);
-		ft_putnbr_un(n % 10);
+		count += ft_putnbr_un(n / 10);
+		count += ft_putnbr_un(n % 10);
 	}
 	else
 	{
