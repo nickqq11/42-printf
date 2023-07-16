@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/10 16:22:04 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/16 23:57:25 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,7 @@ int	ft_printf(const char *s, ...)
 			i++;
 		}
 		else
-		{
-			write(1, &s[i], 1);
-			length++;
-		}
+			length += ft_putchar(s[i]);
 		i++;
 	}
 	return (length);
