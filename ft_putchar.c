@@ -6,13 +6,13 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:05:40 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/10 15:50:31 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/17 15:09:23 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(int c)
 {
 	write(1, &c, 1);
 	return (1);

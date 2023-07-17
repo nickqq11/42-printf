@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:51:44 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/10 19:55:59 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/17 18:10:05 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_uppercase(char up)
 		putchar(up);
 }
 
-int	ft_puthex(int n, char check)
+int	ft_puthex(unsigned int n, char check)
 {
 	int		count;
 	char	*base_x;

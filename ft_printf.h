@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:09 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/10 15:49:22 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/17 18:10:20 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 
 /* printf functions */
 int	ft_printf(const char *s, ...);
-int	ft_putchar(char c);
+int	ft_putchar(int c);
 int	ft_putstr(char *str);
 int	ft_putnbr(long long int n);
 int	ft_putnbr_un(unsigned int n);
-int	ft_puthex(int n, char check);
+int	ft_puthex(unsigned int n, char check);
 int	ft_pointer(unsigned long long int n, char cha);
 
 #endif
