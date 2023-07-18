@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:36:01 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/18 19:52:25 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 19:55:42 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,16 @@ void	ft_put_ptr(size_t num)
 
 int	ft_pointer(size_t n)
 {
-	int	print_length;
+	int	count;
 
-	print_length = 0;
-	print_length += write(1, "0x", 2);
+	count = 0;
+	count += write(1, "0x", 2);
 	if (n == 0)
-		print_length += write(1, "0", 1);
+		count += write(1, "0", 1);
 	else
 	{
 		ft_put_ptr(n);
-		print_length += ft_ptr_len(n);
+		count += ft_ptr_len(n);
 	}
-	return (print_length);
+	return (count);
 }

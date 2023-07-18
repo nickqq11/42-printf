@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:51:44 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/18 18:52:59 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 20:00:26 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 void	ft_uppercase(char up)
 {
 	if (up >= 'a' && up <= 'f')
-		putchar(up - 32);
-	else
-		putchar(up);
+		up -= 32;
+	write(1, &up, 1);
 }
 
 int	ft_puthex(unsigned int n, char check)
