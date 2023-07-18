@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 19:16:08 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/17 14:57:17 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 16:42:54 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_putstr(char *str)
 	i = 0;
 	if (!str)
 		return (write(1, "(null)", 6));
-	while (str[i] != '\0')
+	while (str[i])
 		i++;
 	write(1, &str, i);
 	return (i);
