@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:09 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/17 18:10:20 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 19:51:55 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ int	ft_putstr(char *str);
 int	ft_putnbr(long long int n);
 int	ft_putnbr_un(unsigned int n);
 int	ft_puthex(unsigned int n, char check);
-int	ft_pointer(unsigned long long int n, char cha);
+int	ft_pointer(size_t n);
 
 #endif

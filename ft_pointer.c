@@ -6,33 +6,53 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:36:01 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/10 15:50:03 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 19:52:25 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_pointer(unsigned long long int n, char cha)
+int	ft_ptr_len(size_t num)
 {
-	char	*base;
-	int		count;
+	int	len;
 
-	count = 0;
-	base = "0123456789abcdef";
-	if (cha == 'p')
+	len = 0;
+	while (num != 0)
 	{
-		write(1, "0x", 2);
-		count += 2;
+		len++;
+		num /= 16;
 	}
-	if (n >= 16)
+	return (len);
+}
+
+void	ft_put_ptr(size_t num)
+{
+	if (num >= 16)
 	{
-		ft_puthex(n / 16, 'x');
-		ft_puthex(n % 16, 'x');
+		ft_put_ptr(num / 16);
+		ft_put_ptr(num % 16);
 	}
 	else
 	{
-		write(1, &base[n], 1);
-		count++;
+		if (num <= 9)
+			ft_putchar(num + '0');
+		else
+			ft_putchar(num - 10 + 'a');
 	}
-	return (count);
+}
+
+int	ft_pointer(size_t n)
+{
+	int	print_length;
+
+	print_length = 0;
+	print_length += write(1, "0x", 2);
+	if (n == 0)
+		print_length += write(1, "0", 1);
+	else
+	{
+		ft_put_ptr(n);
+		print_length += ft_ptr_len(n);
+	}
+	return (print_length);
 }

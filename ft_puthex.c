@@ -6,11 +6,11 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 16:51:44 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/17 18:10:05 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 18:52:59 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "ft_printf.h"
 
 void	ft_uppercase(char up)
 {

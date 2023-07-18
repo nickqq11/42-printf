@@ -6,7 +6,7 @@
 /*   By: nhuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:53:53 by nhuang            #+#    #+#             */
-/*   Updated: 2023/07/17 18:11:20 by nhuang           ###   ########.fr       */
+/*   Updated: 2023/07/18 19:52:21 by nhuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	ft_portal(va_list args, char cha)
 		return (ft_puthex(va_arg(args, unsigned int), cha));
 	if (cha == 'p')
 	{
-		ptr = va_arg(args, unsigned long long);
-		if (ptr)
-			return (ft_pointer(ptr, cha));
-		return (ft_putstr("(nil)"));
+		ptr = va_arg(args, size_t);
+		return (ft_pointer(ptr));
 	}
 	if (cha == '%')
 		return (ft_putchar('%'));
@@ -61,7 +59,7 @@ int	ft_printf(const char *s, ...)
 	va_start(args, s);
 	while (s[i])
 	{
-		if (s[i] == '%' && ft_eval(s[i + 1]) == 1)
+		if (s[i] == '%' && (ft_eval(s[i + 1]) == 1))
 		{
 			length += ft_portal(args, s[i + 1]);
 			i++;
